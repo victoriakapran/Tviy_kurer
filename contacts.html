@@ -1,152 +1,331 @@
+<!-- Сайт розроблено студенткою Капран Вікторією, група ФЕМП 3-13 -->
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Контакти — Твій кур'єр</title>
-  <meta name="description" content="Контактна інформація сервісу доставки Твій кур'єр: телефон, email, адреса та години роботи." />
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<title>Контакти — Твій кур'єр</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fffdf7;
+  color: #2b241a;
+}
+
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6ddcf;
+  padding: 15px 0;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+  color: #6b3f1d;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #6b3f1d;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
+
+.page {
+  margin: 28px 0 10px;
+}
+
+.lead {
+  margin: 10px 0 18px;
+  color: #6b5a45;
+  line-height: 1.55;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin: 22px 0 40px;
+  align-items: start;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e6ddcf;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0 0 12px;
+  color: #6b3f1d;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid #e6ddcf;
+  border-radius: 999px;
+  background: #fff6d6;
+  color: #6b3f1d;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e6ddcf;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e6ddcf;
+  font-size: 14px;
+}
+
+th {
+  background: #fff6d6;
+  color: #6b3f1d;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e6ddcf;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+  min-height: 90px;
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #f2c94c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid #e6ddcf;
+}
+
+.note {
+  margin-top: 10px;
+  color: #6b5a45;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.alert {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff6d6;
+  border: 1px dashed #d7c9b5;
+  color: #6b5a45;
+  display: none;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  background: #ffffff;
+  border-top: 1px solid #e6ddcf;
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Твій кур'єр — головна">
-        <span class="brand-mark"></span>
-        <span class="brand-text">
-          <span class="brand-name">Твій кур&apos;єр</span>
-          <span class="brand-tagline">доставка по Україні — швидко та передбачувано</span>
-        </span>
-      </a>
 
-      <nav class="nav" aria-label="Навігація">
-        <a class="nav-link" href="index.html">Головна</a>
-        <a class="nav-link" href="tariffs.html">Тарифи і міста</a>
-        <a class="nav-link" href="about.html">Про сервіс</a>
-        <a class="nav-link is-active" href="contacts.html">Контакти</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">Твій кур'єр</a>
+    <div>
+      <a href="index.html">Головна</a>
+      <a href="tariffs.html">Тарифи/Міста</a>
+      <a href="calculator.html">Калькулятор</a>
+      <a href="about.html">Про сервіс</a>
+      <a class="active" href="contacts.html">Контакти</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="card hero-card">
-          <div class="hero-content">
-            <p class="eyebrow">Контакти</p>
-            <h1 class="hero-title">Зв&apos;яжіться з нами</h1>
-            <p class="hero-subtitle">
-              Якщо вам потрібно уточнити деталі доставки, розрахунку вартості або доступних опцій,
-              залишайте запит — ми відповімо у робочий час.
-            </p>
+<main class="container">
+  <div class="page">
+    <h2>Контакти</h2>
+    <p class="lead">
+      Ця сторінка моделює контактний розділ реального сервісу доставки. Відправка повідомлення виконана
+      як демонстрація клієнтської взаємодії (без сервера та без збереження).
+    </p>
+  </div>
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="tariffs.html#calculator">Розрахувати доставку</a>
-              <a class="btn btn-ghost" href="tariffs.html">Тарифи і міста</a>
-            </div>
+  <div class="grid">
+    <div class="card">
+      <div class="badge">Зв'язок</div>
+      <h3 style="margin-top:10px;">Контактні дані</h3>
 
-            <div class="hero-badges">
-              <div class="badge"><span class="badge-dot"></span><span class="badge-text">підтримка</span></div>
-              <div class="badge"><span class="badge-dot"></span><span class="badge-text">контактні дані</span></div>
-              <div class="badge"><span class="badge-dot"></span><span class="badge-text">години роботи</span></div>
-            </div>
-          </div>
+      <table aria-label="Контактні дані">
+        <thead>
+          <tr>
+            <th>Канал</th>
+            <th>Дані</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Гаряча лінія</td><td>+38 (0XX) XXX-XX-XX</td></tr>
+          <tr><td>Email</td><td>support@tviikurier.example</td></tr>
+          <tr><td>Графік</td><td>Пн–Сб 09:00–19:00</td></tr>
+          <tr><td>Адреса (приклад)</td><td>м. Київ, вул. Прикладна, 10</td></tr>
+        </tbody>
+      </table>
 
-          <div class="hero-media">
-            <div class="media-frame">
-              <img class="media-img" src="img/contacts-banner.jpg" alt="Контакти Твій кур'єр" />
-            </div>
-            <p class="media-note">Зображення: заміни файл <strong>img/contacts-banner.jpg</strong> на власний.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Контактна інформація</h2>
-          <p class="section-subtitle">Актуальні дані для зв&apos;язку та консультації.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="form">
-              <div class="breakdown">
-                <div class="break-row"><span>Телефон</span><strong>+380 (99) 000-00-00</strong></div>
-                <div class="break-row"><span>Email</span><strong>support@tviy-kurier.ua</strong></div>
-                <div class="break-row"><span>Адреса</span><strong>м. Київ, вул. Логістична, 10</strong></div>
-                <div class="break-row"><span>Години роботи</span><strong>10:00–20:00</strong></div>
-              </div>
-
-              <div class="hero-actions" style="margin-top:14px;">
-                <a class="btn btn-primary" href="index.html#calculator">Калькулятор на головній</a>
-                <a class="btn btn-secondary" href="about.html">Про сервіс</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="form">
-              <div class="media-frame">
-                <img class="media-img" src="img/location.jpg" alt="Локація офісу" />
-              </div>
-              <p class="media-note">Зображення: заміни файл <strong>img/location.jpg</strong> на власний.</p>
-              <div class="breakdown" style="margin-top:10px;">
-                <div class="break-row"><span>Місто</span><strong>Київ</strong></div>
-                <div class="break-row"><span>Орієнтир</span><strong>бізнес-центр / офіс</strong></div>
-                <div class="break-row"><span>Прийом звернень</span><strong>у робочі години</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-cta">
-      <div class="container">
-        <div class="card cta-card">
-          <div class="cta-content">
-            <h2 class="cta-title">Хочете швидко перевірити вартість?</h2>
-            <p class="cta-text">
-              Перейдіть на сторінку тарифів: там є список міст, коефіцієнти та дубль калькулятора для порівняння.
-            </p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="tariffs.html">Тарифи і міста</a>
-            <a class="btn btn-secondary" href="index.html#calculator">Калькулятор</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <div class="footer-brand">Твій кур&apos;єр</div>
-        <div class="footer-meta">Доставка по Україні • навчальний проєкт</div>
-      </div>
-
-      <div class="footer-col">
-        <div class="footer-title">Навігація</div>
-        <div class="footer-line"><a class="footer-link" href="index.html">Головна</a></div>
-        <div class="footer-line"><a class="footer-link" href="tariffs.html">Тарифи і міста</a></div>
-        <div class="footer-line"><a class="footer-link" href="about.html">Про сервіс</a></div>
-      </div>
-
-      <div class="footer-col">
-        <div class="footer-title">Авторство</div>
-        <div class="footer-line">Капран Вікторія</div>
-        <div class="footer-line">Група: ФЕМП 3-13</div>
+      <div class="note">
+        Примітка: це навчальний проєкт. Реальна відправка листів/форм не використовується (без PHP, API та БД).
       </div>
     </div>
 
-    <div class="container footer-bottom">
-      <span>© 2025 Твій кур&apos;єр. Навчальний проєкт.</span>
-    </div>
-  </footer>
+    <div class="card">
+      <div class="badge">Форма</div>
+      <h3 style="margin-top:10px;">Написати повідомлення</h3>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+      <form id="msgForm" autocomplete="off">
+        <div>
+          <label>Ім'я</label>
+          <input type="text" id="name" placeholder="Ваше ім'я" required>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input type="email" id="email" placeholder="name@example.com" required>
+        </div>
+
+        <textarea id="message" placeholder="Ваше повідомлення..." required></textarea>
+
+        <div class="actions">
+          <button type="submit">Надіслати</button>
+          <button class="btn-secondary" type="button" id="clearBtn">Очистити</button>
+        </div>
+      </form>
+
+      <div class="alert" id="alertBox"></div>
+
+      <div class="note">
+        Після натискання «Надіслати» відображається підтвердження без перезавантаження сторінки.
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    Виконавець: <b>Капран Вікторія</b> | Група: <b>ФЕМП 3-13</b>
+  </div>
+</footer>
+
+<script>
+function escapeHtml(str){
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+const form = document.getElementById("msgForm");
+const alertBox = document.getElementById("alertBox");
+
+document.getElementById("clearBtn").addEventListener("click", function(){
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
+  alertBox.style.display = "none";
+});
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if(!name || !email || !message){
+    alert("Заповніть усі поля");
+    return;
+  }
+
+  alertBox.style.display = "block";
+  alertBox.innerHTML =
+    "<b>Повідомлення сформовано (демонстрація):</b><br>" +
+    "Ім'я: " + escapeHtml(name) + "<br>" +
+    "Email: " + escapeHtml(email) + "<br>" +
+    "Текст: " + escapeHtml(message);
+
+  // без реальної відправки (умова забороняє сервер)
+});
+</script>
+
 </body>
 </html>

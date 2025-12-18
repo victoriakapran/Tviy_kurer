@@ -3,7 +3,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Тарифи/Міста — Твій кур'єр</title>
+<title>Калькулятор — Твій кур'єр</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -49,10 +49,6 @@ header {
   text-decoration: underline;
 }
 
-h1, h2 {
-  margin: 0;
-}
-
 .page {
   margin: 28px 0 10px;
 }
@@ -60,14 +56,15 @@ h1, h2 {
 .lead {
   margin: 10px 0 18px;
   color: #6b5a45;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 22px;
   margin: 22px 0 40px;
+  align-items: start;
 }
 
 .card {
@@ -77,28 +74,13 @@ h1, h2 {
   padding: 20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #e6ddcf;
-  border-radius: 12px;
-  overflow: hidden;
+h2 {
+  margin: 0;
 }
 
-th, td {
-  text-align: left;
-  padding: 12px;
-  border-bottom: 1px solid #e6ddcf;
-  font-size: 14px;
-}
-
-th {
-  background: #fff6d6;
+h3 {
+  margin: 0 0 12px;
   color: #6b3f1d;
-}
-
-tr:last-child td {
-  border-bottom: none;
 }
 
 button {
@@ -136,6 +118,19 @@ form input {
   grid-column: 1 / -1;
 }
 
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid #e6ddcf;
+}
+
 .note {
   margin-top: 10px;
   color: #6b5a45;
@@ -158,6 +153,41 @@ form input {
   font-size: 13px;
 }
 
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid #e6ddcf;
+  border-radius: 999px;
+  background: #fff6d6;
+  color: #6b3f1d;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e6ddcf;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e6ddcf;
+  font-size: 14px;
+}
+
+th {
+  background: #fff6d6;
+  color: #6b3f1d;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
 footer {
   margin-top: 40px;
   padding: 20px 0;
@@ -175,8 +205,8 @@ footer {
     <a class="brand" href="index.html">Твій кур'єр</a>
     <div>
       <a href="index.html">Головна</a>
-      <a class="active" href="tariffs.html">Тарифи/Міста</a>
-      <a href="calculator.html">Калькулятор</a>
+      <a href="tariffs.html">Тарифи/Міста</a>
+      <a class="active" href="calculator.html">Калькулятор</a>
       <a href="about.html">Про сервіс</a>
       <a href="contacts.html">Контакти</a>
     </div>
@@ -185,34 +215,17 @@ footer {
 
 <main class="container">
   <div class="page">
-    <h2>Тарифи та міста</h2>
+    <h2>Калькулятор вартості доставки</h2>
     <p class="lead">
-      На цій сторінці наведено 12 найпопулярніших міст України з коефіцієнтами (множниками).
-      Коефіцієнт міста застосовується до суми після базової ціни та вагового тарифу.
+      Заповніть усі поля (місто, вага, тип доставки) та оберіть опції за потреби.
+      Розрахунок виконується через JavaScript без перезавантаження сторінки.
     </p>
   </div>
 
   <div class="grid">
     <div class="card">
-      <h3 style="margin:0 0 12px; color:#6b3f1d;">Міста та коефіцієнти</h3>
-      <table aria-label="Таблиця міст та коефіцієнтів">
-        <thead>
-          <tr>
-            <th>Місто</th>
-            <th>Коефіцієнт</th>
-            <th>Формула (скорочено)</th>
-          </tr>
-        </thead>
-        <tbody id="citiesTableBody"></tbody>
-      </table>
-
-      <div class="note">
-        Вага (діапазони): до 5 кг, 5–10 кг, 10–30 кг, від 30 кг. Округлення: до 2 знаків після коми.
-      </div>
-    </div>
-
-    <div class="card">
-      <h3 style="margin:0 0 12px; color:#6b3f1d;">Калькулятор (дубль на сторінці тарифів)</h3>
+      <div class="badge">Калькулятор</div>
+      <h3 style="margin-top:10px;">Розрахунок онлайн</h3>
 
       <form id="calcForm" autocomplete="off">
         <div>
@@ -224,7 +237,7 @@ footer {
 
         <div>
           <label>Вага (кг)</label>
-          <input type="number" id="weight" step="0.01" min="0.1" required>
+          <input type="number" id="weight" step="0.01" min="0.1" required placeholder="Напр. 2.50">
         </div>
 
         <div style="grid-column:1 / -1">
@@ -240,8 +253,10 @@ footer {
           <label><input type="checkbox" id="insurance"> Страховка (+10%)</label>
         </div>
 
-        <div style="grid-column:1 / -1">
+        <div class="actions">
           <button type="submit">Розрахувати</button>
+          <button class="btn-secondary" id="resetBtn" type="button">Очистити</button>
+          <span class="note">Базова ціна: <b id="basePriceLine">—</b>. Округлення: 2 знаки.</span>
         </div>
       </form>
 
@@ -249,9 +264,33 @@ footer {
         <div id="sumLine"></div>
         <div class="breakdown" id="breakdown"></div>
       </div>
+    </div>
+
+    <div class="card">
+      <div class="badge">Правила розрахунку</div>
+      <h3 style="margin-top:10px;">Тарифи та логіка</h3>
+
+      <p class="lead" style="margin-bottom:12px;">
+        Формула: <b>(база + тариф_ваги × вага) × коеф_міста × множник_типу × (1 + %опцій)</b>
+      </p>
+
+      <table aria-label="Тариф по вазі">
+        <thead>
+          <tr>
+            <th>Діапазон ваги</th>
+            <th>Тариф за 1 кг</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>до 5 кг</td><td>12.00 грн/кг</td></tr>
+          <tr><td>5–10 кг</td><td>10.00 грн/кг</td></tr>
+          <tr><td>10–30 кг</td><td>8.00 грн/кг</td></tr>
+          <tr><td>від 30 кг</td><td>7.00 грн/кг</td></tr>
+        </tbody>
+      </table>
 
       <div class="note">
-        Базова ціна: <b id="basePriceLine">—</b>. Формула: (база + тариф_ваги × вага) × коеф_міста × множник_типу × (1 + %опцій).
+        Опції додаються як відсотки до вартості: крихке +5%, післяплата +2%, страховка +10%.
       </div>
     </div>
   </div>
@@ -288,9 +327,7 @@ const types = [
 
 const basePrice = 55.00;
 
-function fmt2(n){
-  return Number(n).toFixed(2);
-}
+function fmt2(n){ return Number(n).toFixed(2); }
 
 function getWeightRate(weight){
   if (weight <= 5) return 12;
@@ -306,31 +343,32 @@ function getWeightTierLabel(weight){
   return "від 30 кг";
 }
 
-// 1) Заповнюємо таблицю міст
-const tableBody = document.getElementById("citiesTableBody");
-tableBody.innerHTML = cities.map(c => {
-  return `<tr>
-    <td>${c.name}</td>
-    <td>${fmt2(c.coef)}</td>
-    <td>(база + тариф×вага) × ${fmt2(c.coef)} × множник_типу × (1 + %)</td>
-  </tr>`;
-}).join("");
-
-// 2) Заповнюємо select'и
+// Select'и
 const citySelect = document.getElementById("city");
 const typeSelect = document.getElementById("type");
 
 cities.forEach(c => {
-  citySelect.innerHTML += `<option value="${c.coef}">${c.name}</option>`;
+  citySelect.innerHTML += `<option value="${c.coef}">${c.name} (коеф. ${fmt2(c.coef)})</option>`;
 });
 
 types.forEach(t => {
-  typeSelect.innerHTML += `<option value="${t.coef}">${t.name}</option>`;
+  typeSelect.innerHTML += `<option value="${t.coef}">${t.name} (x${fmt2(t.coef)})</option>`;
 });
 
 document.getElementById("basePriceLine").textContent = fmt2(basePrice) + " грн";
 
-// 3) Розрахунок
+// Reset
+document.getElementById("resetBtn").addEventListener("click", function(){
+  citySelect.value = "";
+  typeSelect.value = "";
+  document.getElementById("weight").value = "";
+  document.getElementById("fragile").checked = false;
+  document.getElementById("cod").checked = false;
+  document.getElementById("insurance").checked = false;
+  document.getElementById("result").style.display = "none";
+});
+
+// Submit
 document.getElementById("calcForm").addEventListener("submit", function(e){
   e.preventDefault();
 
@@ -346,10 +384,11 @@ document.getElementById("calcForm").addEventListener("submit", function(e){
   const rate = getWeightRate(weight);
   const tierLabel = getWeightTierLabel(weight);
 
-  let price = basePrice + rate * weight;
-  const beforeCityType = price;
+  const weightCharge = rate * weight;
+  const beforeCityType = basePrice + weightCharge;
 
-  price = price * cityCoef * typeCoef;
+  let price = beforeCityType * cityCoef * typeCoef;
+  const afterCityType = price;
 
   let optText = [];
   let optMultiplier = 1;
@@ -358,7 +397,6 @@ document.getElementById("calcForm").addEventListener("submit", function(e){
   if(document.getElementById("cod").checked){ optMultiplier *= 1.02; optText.push("Післяплата +2%"); }
   if(document.getElementById("insurance").checked){ optMultiplier *= 1.10; optText.push("Страховка +10%"); }
 
-  const afterCityType = price;
   price = price * optMultiplier;
 
   document.getElementById("result").style.display = "block";
@@ -368,8 +406,10 @@ document.getElementById("calcForm").addEventListener("submit", function(e){
   const optionsLine = optText.length ? optText.join(", ") : "Опції: без доплат";
 
   document.getElementById("breakdown").innerHTML =
+    "<div>Місто: <b>" + citySelect.options[citySelect.selectedIndex].text + "</b></div>" +
+    "<div>Тип доставки: <b>" + typeSelect.options[typeSelect.selectedIndex].text + "</b></div>" +
     "<div>Вага: <b>" + fmt2(weight) + " кг</b> (" + tierLabel + ", " + fmt2(rate) + " грн/кг)</div>" +
-    "<div>База: " + fmt2(basePrice) + " + за вагу: " + fmt2(rate * weight) + " = " + fmt2(beforeCityType) + " грн</div>" +
+    "<div>База: " + fmt2(basePrice) + " + за вагу: " + fmt2(weightCharge) + " = " + fmt2(beforeCityType) + " грн</div>" +
     "<div>Після множників: × місто(" + fmt2(cityCoef) + ") × тип(" + fmt2(typeCoef) + ") = " + fmt2(afterCityType) + " грн</div>" +
     "<div>" + optionsLine + "</div>";
 });

@@ -1,190 +1,257 @@
+<!-- Сайт розроблено студенткою Капран Вікторією, група ФЕМП 3-13 -->
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Твій кур'єр — доставка по Україні</title>
-  <meta name="description" content="Твій кур'єр — сервіс доставки по Україні. Розрахунок вартості доставки за містом, вагою та типом доставки." />
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<title>Твій кур'єр — доставка</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fffdf7;
+  color: #2b241a;
+}
+
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6ddcf;
+  padding: 15px 0;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #6b3f1d;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e6ddcf;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+button {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #f2c94c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+form select,
+form input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e6ddcf;
+}
+
+.options {
+  grid-column: 1 / -1;
+}
+
+.result {
+  margin-top: 15px;
+  padding: 15px;
+  background: #fff6d6;
+  border-radius: 12px;
+  display: none;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  background: #ffffff;
+  border-top: 1px solid #e6ddcf;
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Твій кур'єр — головна">
-        <span class="brand-mark"></span>
-        <span class="brand-text">
-          <span class="brand-name">Твій кур&apos;єр</span>
-          <span class="brand-tagline">доставка по Україні — швидко та передбачувано</span>
-        </span>
-      </a>
 
-      <nav class="nav" aria-label="Навігація">
-        <a class="nav-link is-active" href="index.html">Головна</a>
-        <a class="nav-link" href="tariffs.html">Тарифи і міста</a>
-        <a class="nav-link" href="about.html">Про сервіс</a>
-        <a class="nav-link" href="contacts.html">Контакти</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <h1>Твій кур'єр</h1>
+    <div>
+      <a href="#">Головна</a>
+      <a href="#">Тарифи</a>
+      <a href="#">Калькулятор</a>
+      <a href="#">Про сервіс</a>
+      <a href="#">Контакти</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="card hero-card">
-          <div class="hero-content">
-            <p class="eyebrow">Сервіс доставки</p>
-            <h1 class="hero-title">Розрахуйте вартість доставки за 10 секунд.</h1>
-            <p class="hero-subtitle">
-              Оберіть місто, вагу та тип доставки. Додайте опції за потреби — крихке, післяплата або страховка.
-              Результат відображається одразу на сторінці без перезавантаження.
-            </p>
+<main class="container">
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#calculator">Перейти до калькулятора</a>
-              <a class="btn btn-ghost" href="tariffs.html">Переглянути тарифи</a>
-            </div>
+<section class="hero">
+  <div class="card">
+    <h2>Розрахунок доставки онлайн</h2>
+    <p>
+      Сервіс дозволяє швидко розрахувати вартість доставки залежно від міста,
+      ваги та типу доставки.
+    </p>
+    <p><b>Виконавець:</b> Капран Вікторія<br>
+       <b>Група:</b> ФЕМП 3-13</p>
 
-            <div class="hero-badges">
-              <div class="badge"><span class="badge-dot"></span><span class="badge-text">12 міст</span></div>
-              <div class="badge"><span class="badge-dot"></span><span class="badge-text">4 типи доставки</span></div>
-              <div class="badge"><span class="badge-dot"></span><span class="badge-text">вага: до 5 / 10 / 30 / 30+</span></div>
-            </div>
-          </div>
+<img src="img/delivery.jpg"
+       alt="Сервіс доставки Твій кур'єр"
+       style="width:100%; margin-top:15px; border-radius:16px;">
+  </div>
 
-          <div class="hero-media" aria-label="Ілюстрація">
-            <div class="media-frame">
-              <img class="media-img" src="img/hero-banner.jpg" alt="Доставка Твій кур'єр" />
-              <div class="media-overlay">
-                <div class="media-stat">
-                  <div class="media-stat-number">UA</div>
-                  <div class="media-stat-label">доставка по Україні</div>
-                </div>
-                <div class="media-stat">
-                  <div class="media-stat-number">24/7</div>
-                  <div class="media-stat-label">онлайн-розрахунок</div>
-                </div>
-              </div>
-            </div>
-            <p class="media-note">Зображення: заміни файл <strong>img/hero-banner.jpg</strong> на власний.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="card">
+    <h2>Калькулятор доставки</h2>
 
-    <section id="calculator" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Калькулятор вартості доставки</h2>
-          <p class="section-subtitle">
-            Вкажіть усі параметри — і отримайте точну суму з розшифровкою.
-          </p>
-        </div>
-
-        <div class="card">
-          <form id="deliveryForm" class="form">
-            <div class="grid-2">
-              <div class="field">
-                <label class="label" for="citySelect">Місто доставки</label>
-                <select id="citySelect" class="select" required></select>
-              </div>
-
-              <div class="field">
-                <label class="label" for="deliveryType">Тип доставки</label>
-                <select id="deliveryType" class="select" required></select>
-              </div>
-
-              <div class="field">
-                <label class="label" for="weightTier">Вага відправлення</label>
-                <select id="weightTier" class="select" required></select>
-              </div>
-
-              <div class="field">
-                <div class="label">Додаткові опції</div>
-                <div class="checklist">
-                  <label class="check">
-                    <input type="checkbox" id="optFragile" />
-                    <div>
-                      <div class="check-title">Крихке</div>
-                      <div class="check-desc">+5% до вартості</div>
-                    </div>
-                  </label>
-                  <label class="check">
-                    <input type="checkbox" id="optCod" />
-                    <div>
-                      <div class="check-title">Післяплата</div>
-                      <div class="check-desc">+2% до вартості</div>
-                    </div>
-                  </label>
-                  <label class="check">
-                    <input type="checkbox" id="optInsurance" />
-                    <div>
-                      <div class="check-title">Страховка</div>
-                      <div class="check-desc">+10% до вартості</div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div class="field">
-              <button type="submit" class="btn btn-primary">Розрахувати</button>
-            </div>
-          </form>
-
-          <div id="resultBlock" class="result hidden">
-            <p class="result-title">Підсумок розрахунку</p>
-            <p id="resultValue" class="result-value">0.00 грн</p>
-            <div id="breakdown" class="breakdown"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-cta">
-      <div class="container">
-        <div class="card cta-card">
-          <div class="cta-content">
-            <h2 class="cta-title">Хочете порівняти міста та коефіцієнти?</h2>
-            <p class="cta-text">
-              На сторінці тарифів ви знайдете список міст і правила розрахунку, а також дубль калькулятора для швидкого порівняння.
-            </p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="tariffs.html">Тарифи і міста</a>
-            <a class="btn btn-secondary" href="contacts.html">Контакти</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <div class="footer-brand">Твій кур&apos;єр</div>
-        <div class="footer-meta">Доставка по Україні • навчальний проєкт</div>
+    <form id="calcForm">
+      <div>
+        <label>Місто</label>
+        <select id="city">
+          <option value="">Оберіть місто</option>
+        </select>
       </div>
 
-      <div class="footer-col">
-        <div class="footer-title">Навігація</div>
-        <div class="footer-line"><a class="footer-link" href="tariffs.html">Тарифи і міста</a></div>
-        <div class="footer-line"><a class="footer-link" href="about.html">Про сервіс</a></div>
-        <div class="footer-line"><a class="footer-link" href="contacts.html">Контакти</a></div>
+      <div>
+        <label>Вага (кг)</label>
+        <input type="number" id="weight" step="0.01" min="0.1">
       </div>
 
-      <div class="footer-col">
-        <div class="footer-title">Авторство</div>
-        <div class="footer-line">Капран Вікторія</div>
-        <div class="footer-line">Група: ФЕМП 3-13</div>
+      <div style="grid-column:1 / -1">
+        <label>Тип доставки</label>
+        <select id="type">
+          <option value="">Оберіть тип</option>
+        </select>
       </div>
-    </div>
 
-    <div class="container footer-bottom">
-      <span>© 2025 Твій кур&apos;єр. Навчальний проєкт.</span>
-    </div>
-  </footer>
+      <div class="options">
+        <label><input type="checkbox" id="fragile"> Крихке (+5%)</label><br>
+        <label><input type="checkbox" id="cod"> Післяплата (+2%)</label><br>
+        <label><input type="checkbox" id="insurance"> Страховка (+10%)</label>
+      </div>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+      <div style="grid-column:1 / -1">
+        <button type="submit">Розрахувати</button>
+      </div>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    Виконавець: <b>Капран Вікторія</b> | Група: <b>ФЕМП 3-13</b>
+  </div>
+</footer>
+
+<script>
+const cities = [
+  {name: "Київ", coef: 1.0},
+  {name: "Львів", coef: 1.08},
+  {name: "Одеса", coef: 1.1},
+  {name: "Харків", coef: 1.12},
+  {name: "Дніпро", coef: 1.07},
+  {name: "Запоріжжя", coef: 1.11},
+  {name: "Вінниця", coef: 1.05},
+  {name: "Полтава", coef: 1.06},
+  {name: "Чернігів", coef: 1.09},
+  {name: "Черкаси", coef: 1.04},
+  {name: "Івано-Франківськ", coef: 1.1},
+  {name: "Ужгород", coef: 1.13}
+];
+
+const types = [
+  {name: "Стандарт", coef: 1},
+  {name: "Експрес", coef: 1.35},
+  {name: "Кур'єр до дверей", coef: 1.25},
+  {name: "Поштомат / відділення", coef: 0.95}
+];
+
+const basePrice = 55;
+
+const citySelect = document.getElementById("city");
+const typeSelect = document.getElementById("type");
+
+cities.forEach(c => {
+  citySelect.innerHTML += `<option value="${c.coef}">${c.name}</option>`;
+});
+
+types.forEach(t => {
+  typeSelect.innerHTML += `<option value="${t.coef}">${t.name}</option>`;
+});
+
+document.getElementById("calcForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const cityCoef = Number(citySelect.value);
+  const typeCoef = Number(typeSelect.value);
+  const weight = Number(document.getElementById("weight").value);
+
+  if(!cityCoef || !typeCoef || !weight){
+    alert("Заповніть усі поля");
+    return;
+  }
+
+  let pricePerKg = weight <= 5 ? 12 :
+                   weight <= 10 ? 10 :
+                   weight <= 30 ? 8 : 7;
+
+  let price = basePrice + pricePerKg * weight;
+  price *= cityCoef * typeCoef;
+
+  if(document.getElementById("fragile").checked) price *= 1.05;
+  if(document.getElementById("cod").checked) price *= 1.02;
+  if(document.getElementById("insurance").checked) price *= 1.10;
+
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").innerHTML =
+    "Вартість доставки: <b>" + price.toFixed(2) + " грн</b>";
+});
+</script>
+
 </body>
 </html>
