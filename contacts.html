@@ -3,236 +3,42 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Контакти — Твій кур'єр</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffdf7;
-  color: #2b241a;
-}
-
-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e6ddcf;
-  padding: 15px 0;
-}
-
-.container {
-  width: 1100px;
-  margin: 0 auto;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  font-weight: bold;
-  color: #6b3f1d;
-  text-decoration: none;
-  font-size: 22px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #6b3f1d;
-  font-weight: bold;
-  margin-left: 15px;
-}
-
-.nav a.active {
-  text-decoration: underline;
-}
-
-.page {
-  margin: 28px 0 10px;
-}
-
-.lead {
-  margin: 10px 0 18px;
-  color: #6b5a45;
-  line-height: 1.55;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin: 22px 0 40px;
-  align-items: start;
-}
-
-.card {
-  background: #ffffff;
-  border: 1px solid #e6ddcf;
-  border-radius: 16px;
-  padding: 20px;
-}
-
-h2 {
-  margin: 0;
-}
-
-h3 {
-  margin: 0 0 12px;
-  color: #6b3f1d;
-}
-
-.badge {
-  display: inline-block;
-  padding: 6px 10px;
-  border: 1px solid #e6ddcf;
-  border-radius: 999px;
-  background: #fff6d6;
-  color: #6b3f1d;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #e6ddcf;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-th, td {
-  text-align: left;
-  padding: 12px;
-  border-bottom: 1px solid #e6ddcf;
-  font-size: 14px;
-}
-
-th {
-  background: #fff6d6;
-  color: #6b3f1d;
-}
-
-tr:last-child td {
-  border-bottom: none;
-}
-
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-label {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-input, textarea {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #e6ddcf;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-
-textarea {
-  grid-column: 1 / -1;
-  resize: vertical;
-  min-height: 90px;
-}
-
-.actions {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-button {
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: none;
-  background: #f2c94c;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-.btn-secondary {
-  background: #ffffff;
-  border: 1px solid #e6ddcf;
-}
-
-.note {
-  margin-top: 10px;
-  color: #6b5a45;
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.alert {
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 12px;
-  background: #fff6d6;
-  border: 1px dashed #d7c9b5;
-  color: #6b5a45;
-  display: none;
-}
-
-footer {
-  margin-top: 40px;
-  padding: 20px 0;
-  background: #ffffff;
-  border-top: 1px solid #e6ddcf;
-  font-size: 14px;
-}
-</style>
+<link rel="stylesheet" href="assets/styles.css">
+<title>Контакти — Твій кур'єр</title>
 </head>
-
 <body>
-
+<div class="page">
 <header>
-  <div class="container nav">
-    <a class="brand" href="index.html">Твій кур'єр</a>
-    <div>
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="На головну">
+      <span class="logo">ТК</span>
+      <span>Твій кур'єр</span>
+    </a>
+    <nav class="nav" aria-label="Навігація">
       <a href="index.html">Головна</a>
       <a href="tariffs.html">Тарифи/Міста</a>
       <a href="calculator.html">Калькулятор</a>
       <a href="about.html">Про сервіс</a>
-      <a class="active" href="contacts.html">Контакти</a>
-    </div>
+      <a href="contacts.html">Контакти</a>
+    </nav>
   </div>
 </header>
 
 <main class="container">
-  <div class="page">
-    <h2>Контакти</h2>
+  <section class="section">
+    <span class="badge">Контакти</span>
+    <h2 style="margin-top:10px;">Зв'язок із сервісом</h2>
     <p class="lead">
-      Ця сторінка моделює контактний розділ реального сервісу доставки. Відправка повідомлення виконана
-      як демонстрація клієнтської взаємодії (без сервера та без збереження).
+      Це демонстраційна контактна сторінка. Форма нижче показує інтерактивність на JavaScript (без реальної відправки).
     </p>
-  </div>
+  </section>
 
-  <div class="grid">
+  <section class="section grid-2">
     <div class="card">
-      <div class="badge">Зв'язок</div>
-      <h3 style="margin-top:10px;">Контактні дані</h3>
-
-      <table aria-label="Контактні дані">
-        <thead>
-          <tr>
-            <th>Канал</th>
-            <th>Дані</th>
-          </tr>
-        </thead>
+      <h3>Контактні дані</h3>
+      <table style="margin-top:12px;">
+        <thead><tr><th>Канал</th><th>Дані</th></tr></thead>
         <tbody>
           <tr><td>Гаряча лінія</td><td>+38 (0XX) XXX-XX-XX</td></tr>
           <tr><td>Email</td><td>support@tviikurier.example</td></tr>
@@ -240,92 +46,42 @@ footer {
           <tr><td>Адреса (приклад)</td><td>м. Київ, вул. Прикладна, 10</td></tr>
         </tbody>
       </table>
-
-      <div class="note">
-        Примітка: це навчальний проєкт. Реальна відправка листів/форм не використовується (без PHP, API та БД).
-      </div>
+      <p class="note" style="margin-top:12px;">Примітка: це навчальний проєкт, серверна логіка не використовується.</p>
     </div>
 
     <div class="card">
-      <div class="badge">Форма</div>
-      <h3 style="margin-top:10px;">Написати повідомлення</h3>
-
-      <form id="msgForm" autocomplete="off">
-        <div>
+      <h3>Написати повідомлення</h3>
+      <form class="form" data-contact-form>
+        <div class="field">
           <label>Ім'я</label>
-          <input type="text" id="name" placeholder="Ваше ім'я" required>
+          <input name="name" type="text" placeholder="Ваше ім'я" required>
         </div>
-
-        <div>
+        <div class="field">
           <label>Email</label>
-          <input type="email" id="email" placeholder="name@example.com" required>
+          <input name="email" type="email" placeholder="name@example.com" required>
         </div>
-
-        <textarea id="message" placeholder="Ваше повідомлення..." required></textarea>
-
+        <div class="field">
+          <label>Повідомлення</label>
+          <textarea name="message" placeholder="Ваше повідомлення..." required></textarea>
+        </div>
         <div class="actions">
-          <button type="submit">Надіслати</button>
-          <button class="btn-secondary" type="button" id="clearBtn">Очистити</button>
+          <button class="btn primary" type="submit">Надіслати</button>
+          <button class="btn" type="button" data-contact-clear>Очистити</button>
         </div>
+        <div class="result" data-contact-alert></div>
       </form>
-
-      <div class="alert" id="alertBox"></div>
-
-      <div class="note">
-        Після натискання «Надіслати» відображається підтвердження без перезавантаження сторінки.
-      </div>
+      <p class="note" style="margin-top:12px;">Після «Надіслати» з’явиться підтвердження без перезавантаження.</p>
     </div>
-  </div>
+  </section>
 </main>
 
 <footer>
-  <div class="container">
-    Виконавець: <b>Капран Вікторія</b> | Група: <b>ФЕМП 3-13</b>
+  <div class="container footer-inner">
+    <div>Виконавець: <b>Капран Вікторія</b> | Група: <b>ФЕМП 3-13</b></div>
+    <div class="badge">Твій кур'єр • навчальний проєкт</div>
   </div>
 </footer>
-
-<script>
-function escapeHtml(str){
-  return String(str)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-const form = document.getElementById("msgForm");
-const alertBox = document.getElementById("alertBox");
-
-document.getElementById("clearBtn").addEventListener("click", function(){
-  document.getElementById("name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("message").value = "";
-  alertBox.style.display = "none";
-});
-
-form.addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if(!name || !email || !message){
-    alert("Заповніть усі поля");
-    return;
-  }
-
-  alertBox.style.display = "block";
-  alertBox.innerHTML =
-    "<b>Повідомлення сформовано (демонстрація):</b><br>" +
-    "Ім'я: " + escapeHtml(name) + "<br>" +
-    "Email: " + escapeHtml(email) + "<br>" +
-    "Текст: " + escapeHtml(message);
-
-  // без реальної відправки (умова забороняє сервер)
-});
-</script>
-
+<script src="assets/app.js"></script>
+</div>
 </body>
 </html>

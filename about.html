@@ -3,200 +3,65 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Про сервіс — Твій кур'єр</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffdf7;
-  color: #2b241a;
-}
-
-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e6ddcf;
-  padding: 15px 0;
-}
-
-.container {
-  width: 1100px;
-  margin: 0 auto;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  font-weight: bold;
-  color: #6b3f1d;
-  text-decoration: none;
-  font-size: 22px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #6b3f1d;
-  font-weight: bold;
-  margin-left: 15px;
-}
-
-.nav a.active {
-  text-decoration: underline;
-}
-
-.page {
-  margin: 28px 0 10px;
-}
-
-.lead {
-  margin: 10px 0 18px;
-  color: #6b5a45;
-  line-height: 1.55;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin: 22px 0 40px;
-  align-items: start;
-}
-
-.card {
-  background: #ffffff;
-  border: 1px solid #e6ddcf;
-  border-radius: 16px;
-  padding: 20px;
-}
-
-h2 {
-  margin: 0;
-}
-
-h3 {
-  margin: 0 0 12px;
-  color: #6b3f1d;
-}
-
-.badge {
-  display: inline-block;
-  padding: 6px 10px;
-  border: 1px solid #e6ddcf;
-  border-radius: 999px;
-  background: #fff6d6;
-  color: #6b3f1d;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-ul {
-  margin: 0;
-  padding-left: 18px;
-  color: #6b5a45;
-  line-height: 1.7;
-}
-
-.note {
-  margin-top: 12px;
-  color: #6b5a45;
-  font-size: 12px;
-}
-
-.box {
-  border: 1px dashed #d7c9b5;
-  background: #fff6d6;
-  border-radius: 14px;
-  padding: 14px;
-  color: #6b5a45;
-  line-height: 1.55;
-}
-
-footer {
-  margin-top: 40px;
-  padding: 20px 0;
-  background: #ffffff;
-  border-top: 1px solid #e6ddcf;
-  font-size: 14px;
-}
-</style>
+<link rel="stylesheet" href="assets/styles.css">
+<title>Про сервіс — Твій кур'єр</title>
 </head>
-
 <body>
-
+<div class="page">
 <header>
-  <div class="container nav">
-    <a class="brand" href="index.html">Твій кур'єр</a>
-    <div>
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="На головну">
+      <span class="logo">ТК</span>
+      <span>Твій кур'єр</span>
+    </a>
+    <nav class="nav" aria-label="Навігація">
       <a href="index.html">Головна</a>
       <a href="tariffs.html">Тарифи/Міста</a>
       <a href="calculator.html">Калькулятор</a>
-      <a class="active" href="about.html">Про сервіс</a>
+      <a href="about.html">Про сервіс</a>
       <a href="contacts.html">Контакти</a>
-    </div>
+    </nav>
   </div>
 </header>
 
 <main class="container">
-  <div class="page">
-    <h2>Про сервіс</h2>
+  <section class="section">
+    <span class="badge">Про сервіс</span>
+    <h2 style="margin-top:10px;">Навчальний бізнес-проєкт «Твій кур'єр»</h2>
     <p class="lead">
-      «Твій кур'єр» — навчальний бізнес-проєкт сайту сервісу доставки, який демонструє структуру сайту,
-      візуальний стиль та базову інтерактивність (калькулятор). Усі розрахунки виконуються на стороні клієнта
-      через JavaScript, без серверної частини.
+      Сайт демонструє структуру з 5 HTML-сторінок, меню навігації та інтерактивний калькулятор.
+      Усі розрахунки і динаміка виконуються на стороні клієнта через JavaScript.
     </p>
-  </div>
+  </section>
 
-  <div class="grid">
+  <section class="section grid-2">
     <div class="card">
-      <div class="badge">Мета</div>
-      <h3 style="margin-top:10px;">Що демонструє сайт</h3>
-      <ul>
-        <li>Навігацію між HTML-сторінками без порожніх переходів.</li>
-        <li>Калькулятор вартості доставки з розрахунком у JavaScript.</li>
-        <li>Збереження даних (міста, коефіцієнти, тарифи, типи) у масивах/об’єктах JS.</li>
-        <li>Результат та розшифровку розрахунку без перезавантаження сторінки.</li>
-        <li>Корпоративний мінімалістичний дизайн у коричнево-жовто-білій палітрі.</li>
+      <h3>Що реалізовано</h3>
+      <ul class="lead" style="margin:10px 0 0; padding-left:18px;">
+        <li>Міста та тарифи у масивах JavaScript.</li>
+        <li>Калькулятор без перезавантаження сторінки.</li>
+        <li>Єдиний стиль оформлення CSS на всіх сторінках.</li>
+        <li>Авторство вказано у футері та у верхньому коментарі кожного HTML-файлу.</li>
       </ul>
-      <div class="note">
-        Вимоги авторства виконані: коментар у верхній частині файлу, а також ПІБ і група у футері.
-      </div>
     </div>
 
     <div class="card">
-      <div class="badge">Логіка</div>
-      <h3 style="margin-top:10px;">Як обчислюється ціна</h3>
-      <div class="box">
-        <div><b>Формула:</b></div>
-        <div>(база + тариф_ваги × вага) × коеф_міста × множник_типу × (1 + %опцій)</div>
-        <div style="margin-top:10px;"><b>Опції:</b> крихке +5%, післяплата +2%, страховка +10%.</div>
-        <div style="margin-top:10px;"><b>Округлення:</b> до 2 знаків після коми.</div>
-      </div>
-      <div class="note">
-        Діапазони ваги: до 5 кг, 5–10 кг, 10–30 кг, від 30 кг.
-      </div>
+      <h3>Правила</h3>
+      <p class="lead" style="margin:10px 0 0;">
+        Без PHP, баз даних, файлів або API. Сайт відкривається локально та підходить для публікації на GitHub Pages.
+      </p>
     </div>
-  </div>
-
-  <div class="card">
-    <div class="badge">Сторінки</div>
-    <h3 style="margin-top:10px;">Структура сайту</h3>
-    <p class="lead" style="margin:10px 0 0;">
-      Головна (із калькулятором), Тарифи/Міста (таблиця + калькулятор), Калькулятор (повна сторінка),
-      Про сервіс, Контакти. Меню навігації доступне на кожній сторінці.
-    </p>
-  </div>
+  </section>
 </main>
 
 <footer>
-  <div class="container">
-    Виконавець: <b>Капран Вікторія</b> | Група: <b>ФЕМП 3-13</b>
+  <div class="container footer-inner">
+    <div>Виконавець: <b>Капран Вікторія</b> | Група: <b>ФЕМП 3-13</b></div>
+    <div class="badge">Твій кур'єр • навчальний проєкт</div>
   </div>
 </footer>
-
+<script src="assets/app.js"></script>
+</div>
 </body>
 </html>
