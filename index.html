@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Твій кур'єр — доставка по Україні</title>
+  <meta name="description" content="Твій кур'єр — сервіс доставки по Україні. Розрахунок вартості доставки за містом, вагою та типом доставки." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Твій кур'єр — головна">
+        <span class="brand-mark"></span>
+        <span class="brand-text">
+          <span class="brand-name">Твій кур&apos;єр</span>
+          <span class="brand-tagline">доставка по Україні — швидко та передбачувано</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Навігація">
+        <a class="nav-link is-active" href="index.html">Головна</a>
+        <a class="nav-link" href="tariffs.html">Тарифи і міста</a>
+        <a class="nav-link" href="about.html">Про сервіс</a>
+        <a class="nav-link" href="contacts.html">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="card hero-card">
+          <div class="hero-content">
+            <p class="eyebrow">Сервіс доставки</p>
+            <h1 class="hero-title">Розрахуйте вартість доставки за 10 секунд.</h1>
+            <p class="hero-subtitle">
+              Оберіть місто, вагу та тип доставки. Додайте опції за потреби — крихке, післяплата або страховка.
+              Результат відображається одразу на сторінці без перезавантаження.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#calculator">Перейти до калькулятора</a>
+              <a class="btn btn-ghost" href="tariffs.html">Переглянути тарифи</a>
+            </div>
+
+            <div class="hero-badges">
+              <div class="badge"><span class="badge-dot"></span><span class="badge-text">12 міст</span></div>
+              <div class="badge"><span class="badge-dot"></span><span class="badge-text">4 типи доставки</span></div>
+              <div class="badge"><span class="badge-dot"></span><span class="badge-text">вага: до 5 / 10 / 30 / 30+</span></div>
+            </div>
+          </div>
+
+          <div class="hero-media" aria-label="Ілюстрація">
+            <div class="media-frame">
+              <img class="media-img" src="img/hero-banner.jpg" alt="Доставка Твій кур'єр" />
+              <div class="media-overlay">
+                <div class="media-stat">
+                  <div class="media-stat-number">UA</div>
+                  <div class="media-stat-label">доставка по Україні</div>
+                </div>
+                <div class="media-stat">
+                  <div class="media-stat-number">24/7</div>
+                  <div class="media-stat-label">онлайн-розрахунок</div>
+                </div>
+              </div>
+            </div>
+            <p class="media-note">Зображення: заміни файл <strong>img/hero-banner.jpg</strong> на власний.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Калькулятор вартості доставки</h2>
+          <p class="section-subtitle">
+            Вкажіть усі параметри — і отримайте точну суму з розшифровкою.
+          </p>
+        </div>
+
+        <div class="card">
+          <form id="deliveryForm" class="form">
+            <div class="grid-2">
+              <div class="field">
+                <label class="label" for="citySelect">Місто доставки</label>
+                <select id="citySelect" class="select" required></select>
+              </div>
+
+              <div class="field">
+                <label class="label" for="deliveryType">Тип доставки</label>
+                <select id="deliveryType" class="select" required></select>
+              </div>
+
+              <div class="field">
+                <label class="label" for="weightTier">Вага відправлення</label>
+                <select id="weightTier" class="select" required></select>
+              </div>
+
+              <div class="field">
+                <div class="label">Додаткові опції</div>
+                <div class="checklist">
+                  <label class="check">
+                    <input type="checkbox" id="optFragile" />
+                    <div>
+                      <div class="check-title">Крихке</div>
+                      <div class="check-desc">+5% до вартості</div>
+                    </div>
+                  </label>
+                  <label class="check">
+                    <input type="checkbox" id="optCod" />
+                    <div>
+                      <div class="check-title">Післяплата</div>
+                      <div class="check-desc">+2% до вартості</div>
+                    </div>
+                  </label>
+                  <label class="check">
+                    <input type="checkbox" id="optInsurance" />
+                    <div>
+                      <div class="check-title">Страховка</div>
+                      <div class="check-desc">+10% до вартості</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <button type="submit" class="btn btn-primary">Розрахувати</button>
+            </div>
+          </form>
+
+          <div id="resultBlock" class="result hidden">
+            <p class="result-title">Підсумок розрахунку</p>
+            <p id="resultValue" class="result-value">0.00 грн</p>
+            <div id="breakdown" class="breakdown"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta">
+      <div class="container">
+        <div class="card cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Хочете порівняти міста та коефіцієнти?</h2>
+            <p class="cta-text">
+              На сторінці тарифів ви знайдете список міст і правила розрахунку, а також дубль калькулятора для швидкого порівняння.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="tariffs.html">Тарифи і міста</a>
+            <a class="btn btn-secondary" href="contacts.html">Контакти</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">Твій кур&apos;єр</div>
+        <div class="footer-meta">Доставка по Україні • навчальний проєкт</div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Навігація</div>
+        <div class="footer-line"><a class="footer-link" href="tariffs.html">Тарифи і міста</a></div>
+        <div class="footer-line"><a class="footer-link" href="about.html">Про сервіс</a></div>
+        <div class="footer-line"><a class="footer-link" href="contacts.html">Контакти</a></div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Авторство</div>
+        <div class="footer-line">Капран Вікторія</div>
+        <div class="footer-line">Група: ФЕМП 3-13</div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2025 Твій кур&apos;єр. Навчальний проєкт.</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

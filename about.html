@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Про сервіс — Твій кур'єр</title>
+  <meta name="description" content="Про сервіс Твій кур'єр: принципи роботи, формування тарифів, опції та підхід до сервісу." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Твій кур'єр — головна">
+        <span class="brand-mark"></span>
+        <span class="brand-text">
+          <span class="brand-name">Твій кур&apos;єр</span>
+          <span class="brand-tagline">доставка по Україні — швидко та передбачувано</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Навігація">
+        <a class="nav-link" href="index.html">Головна</a>
+        <a class="nav-link" href="tariffs.html">Тарифи і міста</a>
+        <a class="nav-link is-active" href="about.html">Про сервіс</a>
+        <a class="nav-link" href="contacts.html">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="card hero-card">
+          <div class="hero-content">
+            <p class="eyebrow">Про сервіс</p>
+            <h1 class="hero-title">Прозорий підхід до доставки та тарифів.</h1>
+            <p class="hero-subtitle">
+              Твій кур&apos;єр — навчальний проєкт, який моделює сервіс доставки по Україні.
+              Ми зробили калькулятор з простою логікою: місто (коефіцієнт), вага (категорія), тип доставки (множник) та додаткові опції.
+              Усі розрахунки виконуються через JavaScript на стороні клієнта, без серверу.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tariffs.html#calculator">Розрахувати доставку</a>
+              <a class="btn btn-ghost" href="tariffs.html">Переглянути тарифи</a>
+            </div>
+
+            <div class="hero-badges">
+              <div class="badge"><span class="badge-dot"></span><span class="badge-text">мінімалістичний інтерфейс</span></div>
+              <div class="badge"><span class="badge-dot"></span><span class="badge-text">зрозумілі правила</span></div>
+              <div class="badge"><span class="badge-dot"></span><span class="badge-text">результат з розшифровкою</span></div>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <div class="media-frame">
+              <img class="media-img" src="img/about-banner.jpg" alt="Про сервіс доставки" />
+            </div>
+            <p class="media-note">Зображення: заміни файл <strong>img/about-banner.jpg</strong> на власний.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Як формується ціна</h2>
+          <p class="section-subtitle">
+            Калькулятор показує підсумкову суму та детальну розшифровку кожного кроку.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="form">
+            <div class="breakdown">
+              <div class="break-row">
+                <span><strong>База</strong> — фіксована частина тарифу</span>
+                <strong>60.00 грн</strong>
+              </div>
+              <div class="break-row">
+                <span><strong>Вага</strong> — обирається з 4 категорій</span>
+                <strong>до 5 / 10 / 30 / 30+</strong>
+              </div>
+              <div class="break-row">
+                <span><strong>Місто</strong> — коефіцієнт застосовується до вагової ціни</span>
+                <strong>× коефіцієнт</strong>
+              </div>
+              <div class="break-row">
+                <span><strong>Тип доставки</strong> — множник після підсумування</span>
+                <strong>× множник</strong>
+              </div>
+              <div class="break-row">
+                <span><strong>Опції</strong> — відсоткові доплати</span>
+                <strong>+5% / +2% / +10%</strong>
+              </div>
+              <div class="break-row">
+                <span><strong>Округлення</strong> — до 2 знаків після коми</span>
+                <strong>0.00</strong>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="tariffs.html#calculator">Перейти до калькулятора</a>
+              <a class="btn btn-secondary" href="contacts.html">Зв&apos;язатися</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Опції доставки</h2>
+          <p class="section-subtitle">
+            Додаткові опції змінюють підсумкову вартість. Їх можна обрати на сторінках з калькулятором.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="form">
+            <div class="breakdown">
+              <div class="break-row"><span>Крихке</span><strong>+5%</strong></div>
+              <div class="break-row"><span>Післяплата</span><strong>+2%</strong></div>
+              <div class="break-row"><span>Страховка</span><strong>+10%</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta">
+      <div class="container">
+        <div class="card cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Потрібно швидко порахувати доставку?</h2>
+            <p class="cta-text">
+              Використайте калькулятор на головній сторінці або на сторінці тарифів. У результаті буде показано повну розшифровку.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="index.html#calculator">Калькулятор на головній</a>
+            <a class="btn btn-secondary" href="tariffs.html#calculator">Калькулятор у тарифах</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">Твій кур&apos;єр</div>
+        <div class="footer-meta">Доставка по Україні • навчальний проєкт</div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Навігація</div>
+        <div class="footer-line"><a class="footer-link" href="index.html">Головна</a></div>
+        <div class="footer-line"><a class="footer-link" href="tariffs.html">Тарифи і міста</a></div>
+        <div class="footer-line"><a class="footer-link" href="contacts.html">Контакти</a></div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Авторство</div>
+        <div class="footer-line">Капран Вікторія</div>
+        <div class="footer-line">Група: ФЕМП 3-13</div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2025 Твій кур&apos;єр. Навчальний проєкт.</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
